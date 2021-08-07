@@ -24,6 +24,13 @@ main{
 }
 /* style of top menu area */
 /* header css */
+.menu{
+    display: none;
+    color: blanchedalmond;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+}
 header{
     background-color: #2d25a0;
     background-size: 100%;
@@ -80,10 +87,10 @@ ul{
     margin-top: 153px;
     overflow: hidden;
 }
-.banner img:hover{
+/* .banner img:hover{
     transform: scale(1.1) skew(30deg);
     transition: transform 2s ease ;
-}
+} */
 .link-button {
     background-color: #e02c6d;
     text-decoration: none;
@@ -225,6 +232,7 @@ ul{
     width: 25px;
     height: 25px;
     padding-right: 5px;
+
 }
 .social-logo:hover{
     transform: rotate(-10deg);
@@ -232,27 +240,38 @@ ul{
 /* Style for Media Query */
 
 /* media query for mobile */
-@media only screen and (max-width:688px) {
+@media only screen and (max-width:360px) {
     /* media query for header part */
+    .menu{
+        display: block;
+    }
     header{
         margin-bottom: 677px;
     }
-    nav, .header-part{
-        width: 100%;
-        margin: 0;
-        
+    .header-part{
+        width: 75%;
     }
+    nav, .header-part ul{
+        flex-direction: column;
+        padding-bottom: 5px;
+        padding-left: 0;
+        margin-left: 10px;
+    }
+ 
 
     nav .navigation-part li{
-        width: 100%;
+        width: 50%;
         margin-right: 10px;
+        float: left;
+        margin-right: 200px;
+   
     } 
 /* mobile query for hero part */
    .hero-section{
        flex-direction: column;
    }
    .banner-info h1{
-       width: 100%;
+       width: 50%;
        margin-left: 0;
        margin-bottom: 150px;
    }
@@ -270,8 +289,8 @@ ul{
    }
     .players{
         grid-template-columns: repeat(1, 1fr);
-        margin: 0;
-        padding: 0;
+        margin-left: 171px;
+        padding-left: 14px;
         justify-content: center;
     }
     /* mobile query for optional part */
@@ -285,13 +304,15 @@ ul{
         width: 100%;
         margin: 0;
         margin-top: 100px;
+        height: 391px;
+        padding-left: 35px;
     }
     .highlights{
         margin-left: 10px;
     }
-    .match-photo img{
-        width: 50%;
-        margin-top: 500px;
+    .match-photo{
+        display: none;
+       
     }
     .footer-area{
         width: 483.87px;
@@ -303,12 +324,112 @@ ul{
         margin: auto;
         
     }
+    .map iframe{
+        width: 350px;
+        height: 350px;
+
+    }
  
+    
+}
+@media only screen and (min-width: 360px) and (max-width: 668px) {
+    /* media query for header part */
+    .menu{
+        display: block;
+    }
+    header{
+        margin-bottom: 677px;
+        
+    }
+    .header-part{
+        width: 360px;
+        display: flex;
+        align-self: left;
+    }
+    nav, .header-part ul{
+        flex-direction: column;
+        padding-bottom: 5px;
+        padding-left: 0;
+        margin-left: 10px;
+    }
+ 
+
+    nav .navigation-part li{
+        width: 50%;
+        margin-right: 10px;
+        float: left;
+        margin-right: 200px;
+   
+    } 
+/* mobile query for hero part */
+   .hero-section{
+       flex-direction: column;
+   }
+   .banner-info h1{
+       width: 50%;
+       margin-left: 0;
+       margin-bottom: 150px;
+   }
+   .banner-info .link-button{
+    
+      margin-left: 10px;
+   }
+   .banner img{
+       width: 100%;
+       margin-left: 0;
+   }
+   /* mobile query for players part */
+   .player-section{
+       width: 100%;
+   }
+   .players{
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: 171px;
+    padding-left: 14px;
+    justify-content: center;
+}
+    /* mobile query for optional part */
+    .optional-part, .match-photo{
+       display: flex;
+       flex-direction: column;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    .optional-part  .highlights{
+        width: 100%;
+    margin: 0;
+    margin-top: 100px;
+    height: 391px;
+    padding-left: 35px;
+    }
+    .highlights{
+        margin-left: 10px;
+    }
+    .match-photo{
+        display: none;
+       
+    }
+    .footer-area{
+        width: 483.87px;
+        height: 213px;  
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: auto;
+        
+    }
+    .map iframe{
+        width: 350px;
+        height: 350px;
+
+    }
     
 }
 /* media query for tab */
 @media only screen and (min-width: 688px) and (max-width: 992px) {
     /* tab query for header part */
+  
     header{
         align-items: center;
         justify-content: center;
@@ -349,6 +470,10 @@ ul{
         margin: 0;
         padding: 0;
         align-items: center;
+    }
+    .match-photo{
+        display: none;
+       
     }
     /* tab query for optional part */
     .optional-part, .match-photo{
