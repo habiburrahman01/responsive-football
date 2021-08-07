@@ -86,11 +86,14 @@ ul{
     margin-left: 102px;
     margin-top: 153px;
     overflow: hidden;
+} .banner img:hover{
+    /* transform: scale(1.1) skew(30deg);
+    transition: transform 2s ease ; */
+    height: auto;
+    -webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+
 }
-/* .banner img:hover{
-    transform: scale(1.1) skew(30deg);
-    transition: transform 2s ease ;
-} */
 .link-button {
     background-color: #e02c6d;
     text-decoration: none;
